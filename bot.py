@@ -44,6 +44,7 @@ async def random(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await send_image(update, context, 'random')
     message = await send_text(update, context, message)
     answer = await chat_gpt.send_question(prompt, '')
+    await message.edit_text(answer)
 
 
 # Задание 3
